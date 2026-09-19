@@ -1,14 +1,19 @@
+import { Toaster } from "sonner";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { AppRoutes } from "@/routes";
+
 const App = () => {
-	return (
-		<div className="min-h-screen flex flex-col bg-black text-white/95 items-center justify-center text-2xl font-bold text-center">
-			<img
-				className="size-40"
-				src="https://res.cloudinary.com/dltj8bim0/image/upload/v1761060580/logo_kukwt0.png"
-				alt=""
-			/>
-			<p>Hello Vite + React + TailwindCSS!</p>
-		</div>
-	);
+  return (
+    <div className="flex min-h-screen flex-col bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+      <Navbar />
+      <main className="flex-1">
+        <AppRoutes />
+      </main>
+      <Footer />
+      <Toaster position="bottom-right" theme="system" />
+    </div>
+  );
 };
 
 export default App;
